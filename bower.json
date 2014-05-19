@@ -1,0 +1,18 @@
+{
+  "name": "json-api",
+  "version": "0.0.1",
+  "license": "MIT",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "bootstrap": "~3.1.1",
+    "bootswatch": "~3.1.1+1",
+    "angular-bootstrap": "~0.11.0"
+  }
+}
