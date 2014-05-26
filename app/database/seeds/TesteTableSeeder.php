@@ -12,14 +12,14 @@ class TesteTableSeeder extends Seeder {
          */
         $qtde = 10;
 
-        $testes = array();
+        $teste = array();
 
         for($i = 0; $i < $qtde; $i++){
-            $testes['nome'] = 'Teste N ' . $i;
-            $testes['sobrenome'] = 'Sobrenome ' . $i;
-            $testes['idade'] = ($i + 10);
-
-            Teste::create($testes);
+            $teste['nome'] = 'Teste N ' . $i;
+            $teste['sobrenome'] = 'Sobrenome ' . $i;
+            $teste['idade'] = ($i + 10);
+            $teste['email'] = 'testemail' . $i . '@teste.com';
+            Teste::create($teste);
 
             $this->command->info('Teste N ' . $i . ' adicionado com sucesso!' );
         }

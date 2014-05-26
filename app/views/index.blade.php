@@ -12,12 +12,14 @@
 </head>
 <body ng-app="JsonApi">
 
+<h1>Teste <i class="fa fa-user"></i></h1>
 
-
+<div ng-view></div>
 
 <!-- inject:js -->
 <script src="/bower_components/angular/angular.js"></script>
 <script src="/bower_components/jquery/dist/jquery.js"></script>
+<script src="/bower_components/angular-route/angular-route.js"></script>
 <script src="/bower_components/angular-bootstrap/ui-bootstrap-tpls.js"></script>
 <script src="/bower_components/bootswatch-dist/js/bootstrap.min.js"></script>
 <!-- endinject -->

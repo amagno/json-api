@@ -64,7 +64,7 @@ return array(
 		),
         'mysql-android' => array(
             'driver'    => 'mysql',
-            'host'      => '192.168.1.78',
+            'host'      => '192.168.1.101',
             'database'  => 'jsonapi',
             'username'  => 'root',
             'password'  => '',

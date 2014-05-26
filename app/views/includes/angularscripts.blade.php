@@ -1,3 +1,4 @@
 <!-- inject:js -->
-<script src="/app/JsonApi.js"></script>
+<script src="/angular/JsonApi.js"></script>
+<script src="/angular/controllers/TesteController.js"></script>
 <!-- endinject -->

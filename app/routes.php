@@ -11,7 +11,14 @@
 |
 */
 
-Route::get('/', function()
-{
+Route::get('/', function(){
     return View::make('index');
+});
+
+Route::get('/teste', function(){
+    return Response::json(array('teste' => 'sucess'));
+});
+
+App::missing(function(){
+    return Redirect::to('/');
 });

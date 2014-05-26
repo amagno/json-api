@@ -29,8 +29,8 @@ gulp.task('copy', function(){
         .pipe(gulp.dest(laravelViews));
 });
 
-gulp.task('script', function(){
+gulp.task('angular', function(){
     gulp.src(angularScripts)
         .pipe(inject(gulp.src(angularFiles), {ignorePath: '/public/'}))
-        .pipe(gulp.dest(laravelViews));
+        .pipe(gulp.dest(laravelViews + 'includes/'));
 });
