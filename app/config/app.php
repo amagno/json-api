@@ -119,6 +119,10 @@ return array(
 		'Illuminate\Validation\ValidationServiceProvider',
 		'Illuminate\View\ViewServiceProvider',
 		'Illuminate\Workbench\WorkbenchServiceProvider',
+        /*
+         * ide-helper
+         */
+        'Barryvdh\LaravelIdeHelper\IdeHelperServiceProvider',
 
 	),
 

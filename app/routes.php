@@ -13,5 +13,5 @@
 
 Route::get('/', function()
 {
-    return View::make('layouts.main');
+    return View::make('index');
 });

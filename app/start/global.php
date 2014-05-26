@@ -1,4 +1,12 @@
 <?php
+/**
+ *
+ * Alter de content blade tags for agular js {{}}
+ */
+
+Blade::setContentTags('<%', '%>');
+Blade::setEscapedContentTags('<%%', '%%>');
+//------------------------------------------------------------------------
 /*
 |--------------------------------------------------------------------------
 | Register The Laravel Class Loader
@@ -80,10 +88,4 @@ require app_path().'/filters.php';
 
 
 
-/**
- *
- * Alter de content blade tags for agular js {{}}
- */
 
-Blade::setContentTags('<%', '%>');
-Blade::setEscapedContentTags('<%%', '%%>');

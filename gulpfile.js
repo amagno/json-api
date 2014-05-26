@@ -1,56 +1,36 @@
 var gulp = require('gulp');
-/**
- *
- * Theme on bower component
- * bootswatch
- * @type {string}
- */
-var theme = 'yeti';
-/**
- *
- * Bower components
- * @type {string}
- */
-var bc = './bower_components/';
-/**
- *
- * Public destination folder
- * @type {string}
- */
-var assets = './public/assets/';
+var inject = require('gulp-inject');
+var gulpBowerFiles = require('gulp-bower-files');
 
-var paths = {
-    jquery: {
-        source: bc + 'jquery/dist/*.js',
-        destination: assets + 'jquery/'
-    },
-    bootstrap: {
-        css: {
-            source: bc + 'bootswatch/' + theme + '/*.css',
-            destination: assets + 'bootstrap/css/'
-        },
-        js: {
-            source: bc + 'bootstrap/dist/js/*.js',
-            destination: assets + 'bootstrap/js/'
-        }
-    },
-    angular: {
-        source: bc + 'angular/*.js',
-        destination: assets + 'angular/'
-    },
-    angularbootstrap: {
-        source: bc + 'angular-bootstrap/*.js',
-        destination: assets + 'angular-bootstrap/'
-    }
-};
+/**
+ *
+ *
+ * @type {string}
+ */
 
+var publicComponents = './public/bower_components/';
+
+var indexFile = './app/views/index.blade.php';
+
+var angularScripts = './app/views/includes/angularscripts.blade.php';
+
+var laravelViews = './app/views/';
+
+var angularFiles = './public/angular/**/*.js';
+/**
+ *
+ *
+ *
+ */
 gulp.task('copy', function(){
-    gulp.src(paths.jquery.source).pipe(gulp.dest(paths.jquery.destination));
-    gulp.src(paths.bootstrap.css.source).pipe(gulp.dest(paths.bootstrap.css.destination));
-    gulp.src(paths.bootstrap.js.source).pipe(gulp.dest(paths.bootstrap.js.destination));
-    gulp.src(paths.angular.source).pipe(gulp.dest(paths.angular.destination));
-    gulp.src(paths.angularbootstrap.source).pipe(gulp.dest(paths.angularbootstrap.destination))
+    gulpBowerFiles().pipe(gulp.dest(publicComponents));
+    gulpBowerFiles()
+        .pipe(inject(indexFile))
+        .pipe(gulp.dest(laravelViews));
 });
 
-
-gulp.task('default', ['copy']);
+gulp.task('script', function(){
+    gulp.src(angularScripts)
+        .pipe(inject(gulp.src(angularFiles), {ignorePath: '/public/'}))
+        .pipe(gulp.dest(laravelViews));
+});
