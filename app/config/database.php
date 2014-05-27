@@ -52,10 +52,10 @@ return array(
 			'prefix'   => '',
 		),
 
-		'mysql' => array(
+		'mysql-local' => array(
 			'driver'    => 'mysql',
 			'host'      => 'localhost',
-			'database'  => 'database',
+			'database'  => 'jsonapi',
 			'username'  => 'root',
 			'password'  => '',
 			'charset'   => 'utf8',

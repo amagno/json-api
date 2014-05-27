@@ -10,7 +10,7 @@ var gulpBowerFiles = require('gulp-bower-files');
 
 var publicComponents = './public/bower_components/';
 
-var indexFile = './app/views/index.blade.php';
+var headersFile = './app/views/headers.blade.php';
 
 var angularScripts = './app/views/includes/angularscripts.blade.php';
 
@@ -25,7 +25,7 @@ var angularFiles = './public/angular/**/*.js';
 gulp.task('copy', function(){
     gulpBowerFiles().pipe(gulp.dest(publicComponents));
     gulpBowerFiles()
-        .pipe(inject(indexFile))
+        .pipe(inject(headersFile))
         .pipe(gulp.dest(laravelViews));
 });
 

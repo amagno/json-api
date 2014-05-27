@@ -123,6 +123,10 @@ return array(
          * ide-helper
          */
         'Barryvdh\LaravelIdeHelper\IdeHelperServiceProvider',
+        /**
+         *
+         */
+        'Way\Generators\GeneratorsServiceProvider',
 
 	),
 

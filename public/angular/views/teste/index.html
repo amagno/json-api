@@ -1,9 +1,23 @@
 <h1>Hello Teste</h1>
 
+<div ng-controller="TesteController">
+    <table border="1" id="tableteste" class="display" cellspacing="0" width="100%">
+        <thead>
+        <tr>
+            <th>Teste</th>
+            <th>Sobre Nome</th>
+            <th>E-mail</th>
+            <th>Idade</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr id="{{ teste.id ]}"  ng-repeat="teste in testes">
+            <td>{{ teste.nome }}</td>
+            <td>{{ teste.sobrenome }}</td>
+            <td>{{ teste.email }}</td>
+            <td>{{ teste.idade }}</td>
+        </tr>
+        </tbody>
+    </table>
+</div>
 
-
-
-        <div ng-controller="TesteController">Variavel Teste = {{ varTeste }}
-            <br/>
-            Var2 = {{ teste2 }}
-        </div>

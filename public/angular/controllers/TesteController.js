@@ -1,11 +1,15 @@
 jsonApi.factory('testeService', ['$http', function($http){
     return {
-        teste: 'função teste'
+        get: $http.get('/teste')
     }
 }]);
 
 
 jsonApi.controller('TesteController', ['$scope', 'testeService', function($scope, testeService){
-    $scope.varTeste = 'Variável Teste';
-    $scope.teste2 = testeService.teste;
+
+    testeService.get.success(function(data){
+        $scope.testes = data;
+    });
+
+    $('#tableteste').dataTable();
 }]);
